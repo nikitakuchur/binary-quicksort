@@ -1,4 +1,4 @@
-package sample;
+package sort;
 
 public class Controller {
 }
