@@ -9,13 +9,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sort.Controller">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sort.Controller">
    <children>
       <HBox prefWidth="200.0" spacing="8.0">
          <children>
-            <Label text="Size:" />
-            <TextField fx:id="size"/>
-            <Button mnemonicParsing="false" text="Generate" fx:id="generateButton" onAction="#handleGenerateButtonClick"/>
+            <Label text="Size:">
+               <HBox.margin>
+                  <Insets top="4.0" />
+               </HBox.margin></Label>
+            <TextField fx:id="size" text="50" />
+            <Button fx:id="generateButton" mnemonicParsing="false" onAction="#handleGenerateButtonClick" text="Generate" />
          </children>
       </HBox>
       <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
@@ -26,7 +29,12 @@
             <Insets bottom="8.0" top="8.0" />
          </VBox.margin>
       </Pane>
-      <Button fx:id="playButton" onAction="#handleRunButtonClick" text="Play" />
+      <HBox alignment="TOP_RIGHT" prefWidth="200.0" spacing="8.0">
+         <children>
+            <Button fx:id="playButton" onAction="#handleRunButtonClick" text="Play" />
+            <Button fx:id="stopButton" disable="true" mnemonicParsing="false" onAction="#handleStopButtonClick" text="Stop" />
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
