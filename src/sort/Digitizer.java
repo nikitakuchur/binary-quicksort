@@ -1,5 +1,5 @@
 package sort;
 
 public interface Digitizer<T> {
-    int getDigit(T object, int i);
+    long getDigit(T object, int i);
 }

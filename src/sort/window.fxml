@@ -14,8 +14,8 @@
       <HBox prefWidth="200.0" spacing="8.0">
          <children>
             <Label text="Size:" />
-            <TextField />
-            <Button mnemonicParsing="false" text="Generate" />
+            <TextField fx:id="size"/>
+            <Button mnemonicParsing="false" text="Generate" fx:id="generateButton" onAction="#handleGenerateButtonClick"/>
          </children>
       </HBox>
       <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
