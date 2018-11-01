@@ -23,19 +23,19 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        reDraw(canvas.getGraphicsContext2D());
+        draw(canvas.getGraphicsContext2D());
 
         pane.prefWidthProperty().bind(pane.widthProperty());
         pane.prefHeightProperty().bind(pane.heightProperty());
 
         pane.prefWidthProperty().addListener((ov, oldValue, newValue) -> {
             canvas.setWidth(newValue.doubleValue());
-            reDraw(canvas.getGraphicsContext2D());
+            draw(canvas.getGraphicsContext2D());
         });
 
         pane.prefHeightProperty().addListener((ov, oldValue, newValue) -> {
             canvas.setHeight(newValue.doubleValue());
-            reDraw(canvas.getGraphicsContext2D());
+            draw(canvas.getGraphicsContext2D());
         });
     }
 
@@ -43,7 +43,7 @@ public class Controller implements Initializable {
 
     }
 
-    private void reDraw(GraphicsContext gc) {
+    private void draw(GraphicsContext gc) {
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
