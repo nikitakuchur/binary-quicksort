@@ -1,4 +1,4 @@
-package sort;
+package sort.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -6,11 +6,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import sort.BinaryQuicksortPanel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class VisualizerTabController implements Initializable {
+
     @FXML
     public TextField size;
 
@@ -67,15 +69,18 @@ public class Controller implements Initializable {
         });
     }
 
+    @FXML
     public void handleRunButtonClick() {
         bqPanel.start();
     }
 
+    @FXML
     public void handleStopButtonClick() {
         bqPanel.cancel();
         bqPanel.reset();
     }
 
+    @FXML
     public void handleGenerateButtonClick() {
         int size = Integer.parseInt(this.size.getText());
         bqPanel.generateArray(size);
