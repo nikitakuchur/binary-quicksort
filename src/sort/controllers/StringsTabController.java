@@ -67,7 +67,7 @@ public class StringsTabController  implements Initializable {
             int bsize = Character.SIZE;
             char[] characters = str.toCharArray();
 
-            if (i > characters.length * bsize - 1)
+            if (i > (characters.length - 1)* bsize)
                 return 0;
 
             return (characters[i / bsize] >> (bsize - i % bsize - 1)) & 1;
