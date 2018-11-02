@@ -1,0 +1,7 @@
+.list-cell:empty {
+    -fx-background-color: gainsboro;
+}
+
+.list-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
