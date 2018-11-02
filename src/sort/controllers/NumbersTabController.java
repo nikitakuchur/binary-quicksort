@@ -41,16 +41,13 @@ public class NumbersTabController implements Initializable {
         });
 
         list.setOnKeyPressed(e -> {
-            String item = list.getSelectionModel().getSelectedItem();
+            int i = list.getSelectionModel().getSelectedIndex();
 
-            if (item == null || item.isEmpty())
+            if (i == -1 || i == items.size() - 1)
                 return;
 
             if (e.getCode().equals(KeyCode.DELETE))
-                list.getItems().remove(item);
-
-            if (list.getItems().isEmpty())
-                list.getItems().add("");
+                list.getItems().remove(i);
         });
 
         sortedList.getItems().add("");
