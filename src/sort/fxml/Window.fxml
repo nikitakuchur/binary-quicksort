@@ -10,12 +10,12 @@
         <fx:include source="VisualizerTab.fxml" />
       </content>
     </Tab>
-    <Tab text="Sort Numbers">
+    <Tab text="Numbers">
       <content>
         <fx:include source="NumbersTab.fxml" />
       </content>
     </Tab>
-    <Tab text="Sort Strings">
+    <Tab text="Strings">
       <content>
         <fx:include source="StringsTab.fxml" />
       </content>

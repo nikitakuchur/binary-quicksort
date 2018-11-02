@@ -17,7 +17,7 @@
                <HBox.margin>
                   <Insets top="4.0" />
                </HBox.margin></Label>
-            <TextField fx:id="size" text="50" />
+            <TextField fx:id="size" prefWidth="80.0" text="50" />
             <Button fx:id="generateButton" mnemonicParsing="false" onAction="#handleGenerateButtonClick" text="Generate" />
          </children>
       </HBox>

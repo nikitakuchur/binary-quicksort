@@ -82,8 +82,12 @@ public class VisualizerTabController implements Initializable {
 
     @FXML
     public void handleGenerateButtonClick() {
-        int size = Integer.parseInt(this.size.getText());
-        bqPanel.generateArray(size);
+        try {
+            int size = Integer.parseInt(this.size.getText());
+            if (size != 0 && size < 100000)
+                bqPanel.generateArray(size);
+        } catch (Exception ex) {
+        }
         bqPanel.draw();
     }
 }
