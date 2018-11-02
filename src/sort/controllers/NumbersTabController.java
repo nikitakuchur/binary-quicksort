@@ -33,9 +33,14 @@ public class NumbersTabController implements Initializable {
             try {
                 String str = t.getNewValue();
                 int num = Integer.parseInt(str);
+
                 list.getItems().set(t.getIndex(), "" + num);
-                if (t.getIndex() == list.getItems().size() - 1)
+
+                if (t.getIndex() == items.size() - 1)
                     list.getItems().add("");
+
+                list.getSelectionModel().select(t.getIndex() + 1);
+                list.scrollTo(t.getIndex() + 1);
             } catch (NumberFormatException ex) {
             }
         });

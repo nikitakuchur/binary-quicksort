@@ -84,7 +84,7 @@ public class VisualizerTabController implements Initializable {
     public void handleGenerateButtonClick() {
         try {
             int size = Integer.parseInt(this.size.getText());
-            if (size != 0 && size < 100000)
+            if (size > 0 && size < 100000)
                 bqPanel.generateArray(size);
         } catch (Exception ex) {
         }

@@ -34,6 +34,9 @@ public class StringsTabController  implements Initializable {
 
             if (t.getIndex() == items.size() - 1)
                 list.getItems().add("");
+
+            list.getSelectionModel().select(t.getIndex() + 1);
+            list.scrollTo(t.getIndex() + 1);
         });
 
         list.setOnKeyPressed(e -> {
@@ -52,25 +55,25 @@ public class StringsTabController  implements Initializable {
     @FXML
     public void handleSortButtonClick() {
         int size = items.size() - 1;
-        int bSize = 0;
+        int maxLength = 0;
         String[] array = new String[size];
 
         for (int i = 0; i < size; i++) {
             array[i] = items.get(i);
 
-            if (array[i].length() > bSize)
-                bSize = array[i].length();
+            if (array[i].length() > maxLength)
+                maxLength = array[i].length();
         }
 
         // Sort
-        BinaryQuicksort.sort(array, bSize * Character.SIZE, (str, i) -> {
-            int bsize = Character.SIZE;
+        BinaryQuicksort.sort(array, maxLength * Character.SIZE, (str, i) -> {
+            int bSize = Character.SIZE;
             char[] characters = str.toCharArray();
 
-            if (i > (characters.length - 1)* bsize)
+            if (i > characters.length * bSize - 1)
                 return 0;
 
-            return (characters[i / bsize] >> (bsize - i % bsize - 1)) & 1;
+            return (characters[i / bSize] >> (bSize - i % bSize - 1)) & 1;
         });
 
         sortedList.getItems().clear();
