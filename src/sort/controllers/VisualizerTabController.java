@@ -37,8 +37,6 @@ public class VisualizerTabController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         bqPanel = new BinaryQuicksortPanel(canvas);
 
-        bqPanel.draw();
-
         pane.prefWidthProperty().bind(pane.widthProperty());
         pane.prefHeightProperty().bind(pane.heightProperty());
 
