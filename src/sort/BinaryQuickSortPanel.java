@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 
 import java.util.Random;
 
-public class BinaryQuicksortPanel extends Service<Void> {
+public class BinaryQuickSortPanel extends Service<Void> {
     private double[] array;
 
     private long sleepTime;
@@ -17,7 +17,7 @@ public class BinaryQuicksortPanel extends Service<Void> {
     private Canvas canvas;
     private GraphicsContext gc;
 
-    public BinaryQuicksortPanel(Canvas canvas) {
+    public BinaryQuickSortPanel(Canvas canvas) {
         generateArray(50);
         sleepTime = 10;
         this.canvas = canvas;

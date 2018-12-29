@@ -1,5 +1,11 @@
 package sort;
 
 public interface Digitizer<T> {
-    long getDigit(T object, int i);
+
+    /**
+     * @param object the object
+     * @param index the index
+     * @return the bit by index
+     */
+    long getDigit(T object, int index);
 }

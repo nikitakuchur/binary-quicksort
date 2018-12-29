@@ -3,10 +3,11 @@ package sort.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import sort.BinaryQuicksortPanel;
+import sort.BinaryQuickSortPanel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,11 +32,11 @@ public class VisualizerTabController implements Initializable {
     @FXML
     public Button stopButton;
 
-    private BinaryQuicksortPanel bqPanel;
+    private BinaryQuickSortPanel bqPanel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        bqPanel = new BinaryQuicksortPanel(canvas);
+        bqPanel = new BinaryQuickSortPanel(canvas);
 
         pane.prefWidthProperty().bind(pane.widthProperty());
         pane.prefHeightProperty().bind(pane.heightProperty());
@@ -82,9 +83,17 @@ public class VisualizerTabController implements Initializable {
     public void handleGenerateButtonClick() {
         try {
             int size = Integer.parseInt(this.size.getText());
-            if (size > 0 && size < 100000)
+            if (size > 0 && size <= 10000)
                 bqPanel.generateArray(size);
-        } catch (Exception ex) {
+            else
+                throw new NumberFormatException();
+        } catch (NumberFormatException ex) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid array size!");
+
+            alert.showAndWait();
         }
         bqPanel.draw();
     }
