@@ -5,39 +5,34 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="sort.controllers.VisualizerTabController">
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sort.controllers.VisualizerTabController">
    <children>
-      <HBox prefWidth="200.0" spacing="8.0">
-         <children>
-            <Label text="Size:">
-               <HBox.margin>
-                  <Insets top="4.0" />
-               </HBox.margin></Label>
-            <TextField fx:id="size" prefWidth="80.0" text="50" />
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <Label contentDisplay="RIGHT" text="Size:">
+               <graphic>
+                  <TextField fx:id="size" prefWidth="80.0" text="50" />
+               </graphic></Label>
             <Button fx:id="generateButton" mnemonicParsing="false" onAction="#handleGenerateButtonClick" text="Generate" />
-         </children>
-      </HBox>
+        </items>
+      </ToolBar>
       <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
             <Canvas fx:id="canvas" height="200.0" width="200.0" />
          </children>
          <VBox.margin>
-            <Insets bottom="8.0" top="8.0" />
+            <Insets />
          </VBox.margin>
       </Pane>
-      <HBox alignment="TOP_RIGHT" prefWidth="200.0" spacing="8.0">
-         <children>
-            <Button fx:id="playButton" onAction="#handleRunButtonClick" text="Play" />
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+        <items>
             <Button fx:id="stopButton" disable="true" mnemonicParsing="false" onAction="#handleStopButtonClick" text="Stop" />
-         </children>
-      </HBox>
+            <Button fx:id="playButton" onAction="#handleRunButtonClick" text="Play" />
+        </items>
+      </ToolBar>
    </children>
-   <padding>
-      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-   </padding>
 </VBox>
